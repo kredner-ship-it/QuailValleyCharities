@@ -1,6 +1,6 @@
 # Quail Valley Charities
 
-A static website for Quail Valley Charities, the charitable arm of Quail Valley Golf Club.
+A static website for Quail Valley Charities, the charitable arm of Quail Valley Golf Club, River Club, and The Pointe — celebrating 25 years of giving.
 
 ## Structure
 
@@ -10,7 +10,7 @@ A static website for Quail Valley Charities, the charitable arm of Quail Valley 
 - `events.html` — Upcoming events (golf classic, gala, giving drive, junior camp)
 - `donate.html` — Giving levels, ways to give, and a demo donation form
 - `contact.html` — Contact info and a demo contact form
-- `assets/css/style.css` — Shared stylesheet (green/gold palette)
+- `assets/css/style.css` — Shared stylesheet (teal/maroon palette matching the Quail Valley Charities logo)
 - `assets/js/main.js` — Mobile nav toggle, footer year, demo form handling
 
 ## Running locally

@@ -628,7 +628,8 @@ section { padding: 108px 0; }
 .cta-split .apply { background: var(--ivory); }
 
 /* Forms */
-form.contact-form {
+form.contact-form,
+form.rsvp-form {
   display: grid;
   gap: 20px;
   max-width: 640px;

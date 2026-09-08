@@ -48,7 +48,20 @@ were invented.** Every number, name, date, or address that hasn't been
 verified is a clearly marked placeholder:
 
 - Impact statistics show a dashed "Add figure" pill instead of a fabricated
-  number (see `.placeholder-figure` in the CSS).
+  number (see `.placeholder-figure` in the CSS) — except "25 Years of Giving"
+  and "$15.5M+ Distributed to Local Children's Nonprofits" on Home and Our
+  Impact, which are real figures taken from the organization's own 25th
+  Anniversary event flyer.
+- Events on `events.html` are real — taken from the 25th Anniversary event
+  flyer (14 events, Nov–Jan) — not placeholders. The registration form on
+  that page submits via a pre-filled `mailto:` link to a placeholder
+  `events@quailvalleycharities.org` address (there's no backend on a static
+  GitHub Pages site to receive form submissions). This works today with zero
+  setup, but every registrant has to actually send the email themselves and
+  there's no dashboard of who's registered. If you want real self-service
+  registration with a reviewable guest list, set up a free tool like Google
+  Forms, SignUpGenius, or Eventbrite and swap the form's submit handler (or
+  the `.js-register` buttons) to link there instead.
 - Past Recipients uses bracketed `[Nonprofit Organization Name]` placeholders
   — these are **not** real grant recipients.
 - Grant Information's eligibility criteria, process, and dates are a
@@ -71,8 +84,12 @@ photography" brief.
 
 ## Before launch checklist
 
-- [ ] Replace all placeholder statistics with verified figures
+- [ ] Replace the remaining placeholder statistics (nonprofit partners funded,
+      children/families reached) with verified figures
 - [ ] Replace Past Recipients with real grant history
+- [ ] Confirm the events@quailvalleycharities.org address actually exists and
+      is monitored, or point the RSVP form/`.js-register` buttons at a real
+      registration tool (Google Forms, SignUpGenius, Eventbrite) instead
 - [ ] Confirm Grant Information eligibility, process, and deadlines with staff
 - [ ] Replace board member placeholders with real names/titles/photos
 - [ ] Replace contact info (address, phone, emails) with real details

@@ -1,28 +1,30 @@
 /* ==========================================================================
    Quail Valley Charities — design system
-   Navy / gold / neutral. Serif display + clean sans body. Editorial, quiet.
+   Brand tokens per sitewide style guide: navy #102F3E / #17394B, maroon
+   #7B3F3F / #692A2A, taupe #8B8178, cream #EDE3D3, off-white #F5F5F5.
+   Cormorant Garamond for H1/H2, Open Sans for everything else.
    ========================================================================== */
 
 :root {
-  /* Color */
-  --navy-950: #0a1626;
-  --navy-900: #0e2038;
-  --navy: #14294b;
-  --navy-700: #1e3c68;
-  --navy-500: #35578a;
-  --gold: #b6904f;
-  --gold-deep: #8f6f38;
-  --gold-pale: #e7dabf;
-  --cream: #faf8f3;
-  --ivory: #f3efe5;
+  /* Color — brand palette (exact hexes from the sitewide style guide) */
+  --navy-950: #102f3e;   /* primary heading/text navy; darkest surface */
+  --navy-900: #14374a;   /* derived step between the two brand navies */
+  --navy: #17394b;       /* secondary brand navy */
+  --navy-700: #2d5972;   /* derived lighter navy, gradients/accents only */
+  --navy-500: #3f7a94;   /* derived lightest navy, gradients/accents only */
+  --maroon: #7b3f3f;
+  --maroon-deep: #692a2a;
+  --taupe: #8b8178;
+  --cream: #ede3d3;
+  --ivory: #f5f5f5;
   --stone: #e3ddce;
   --stone-dark: #cfc7b3;
-  --charcoal: #23241f;
-  --text-muted: #6b6a60;
+  --charcoal: #8b8178;
+  --text-muted: #8b8178;
   --white: #ffffff;
-  --shadow-sm: 0 1px 2px rgba(10, 22, 38, 0.06);
-  --shadow: 0 18px 50px rgba(10, 22, 38, 0.1);
-  --shadow-lg: 0 30px 80px rgba(10, 22, 38, 0.16);
+  --shadow-sm: 0 1px 2px rgba(16, 47, 62, 0.06);
+  --shadow: 0 18px 50px rgba(16, 47, 62, 0.1);
+  --shadow-lg: 0 30px 80px rgba(16, 47, 62, 0.16);
   --radius-sm: 4px;
   --radius: 6px;
   --max-width: 1240px;
@@ -40,38 +42,75 @@ html {
 
 body {
   margin: 0;
-  font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--charcoal);
-  background: var(--cream);
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--taupe);
+  background: var(--ivory);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  color: var(--navy);
+/* Headings — brand spec: H1/H2 serif, H3–H6 Open Sans */
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
-  font-weight: 600;
   margin: 0 0 0.55em;
+}
+h1, h2 {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  color: var(--navy-950);
+  font-weight: 500;
   letter-spacing: 0.01em;
 }
-h1 { font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 600; }
-h2 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
-h3 { font-size: 1.4rem; }
-h4 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: "Jost", sans-serif; font-weight: 600; }
+h1 { font-size: clamp(2.4rem, 5vw, 40px); }
+h2 { font-size: clamp(1.6rem, 3.4vw, 26px); }
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--navy-950);
+}
+h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--cream);
+}
+h5 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+h6 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy-950);
+}
 
-p { margin: 0 0 1.1em; }
+p, ul, ol {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--taupe);
+  margin: 0 0 1.1em;
+}
 p.lede { font-size: 1.2rem; color: var(--text-muted); }
 
-a { color: var(--navy); text-decoration-color: var(--gold); text-underline-offset: 3px; }
-a:hover { color: var(--gold-deep); }
+a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--taupe);
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--navy-950); }
 
 img, svg.photo-placeholder { max-width: 100%; display: block; }
 
-::selection { background: var(--gold-pale); color: var(--navy-950); }
+::selection { background: var(--cream); color: var(--navy-950); }
 
 :focus-visible {
-  outline: 2px solid var(--gold-deep);
+  outline: 2px solid var(--maroon-deep);
   outline-offset: 3px;
 }
 
@@ -153,7 +192,7 @@ html.js-reveal .reveal-delay-3.is-visible { transition-delay: 0.24s; }
   height: 44px;
   border-radius: 50%;
   background: var(--navy);
-  border: 1px solid var(--gold);
+  border: 1px solid var(--maroon);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -161,7 +200,7 @@ html.js-reveal .reveal-delay-3.is-visible { transition-delay: 0.24s; }
 }
 .logo-mark span {
   font-family: "Cormorant Garamond", serif;
-  color: var(--gold-pale);
+  color: var(--cream);
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -175,12 +214,12 @@ html.js-reveal .reveal-delay-3.is-visible { transition-delay: 0.24s; }
 }
 .logo-text .tagline {
   display: block;
-  font-family: "Jost", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold-deep);
+  color: var(--maroon-deep);
   margin-top: 2px;
 }
 
@@ -203,7 +242,7 @@ html.js-reveal .reveal-delay-3.is-visible { transition-delay: 0.24s; }
 .main-nav a:not(.btn):hover,
 .main-nav a[aria-current="page"] {
   color: var(--navy);
-  border-bottom-color: var(--gold);
+  border-bottom-color: var(--maroon);
 }
 
 .nav-toggle {
@@ -229,9 +268,9 @@ html.js-reveal .reveal-delay-3.is-visible { transition-delay: 0.24s; }
   justify-content: center;
   gap: 8px;
   padding: 13px 28px;
-  font-family: "Jost", sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   text-decoration: none;
@@ -242,19 +281,23 @@ html.js-reveal .reveal-delay-3.is-visible { transition-delay: 0.24s; }
 }
 .btn:hover { text-decoration: none; transform: translateY(-1px); }
 
-.btn-gold { background: var(--gold); color: var(--navy-950); border-color: var(--gold); }
-.btn-gold:hover { background: var(--gold-deep); border-color: var(--gold-deep); color: var(--white); box-shadow: var(--shadow); }
+/* Primary Button (.abut in the brand guide) */
+.btn-gold { background: var(--maroon); color: var(--white); border-color: var(--maroon); }
+.btn-gold:hover { background: var(--maroon-deep); border-color: var(--maroon-deep); color: var(--white); box-shadow: var(--shadow); }
 
-.btn-navy { background: var(--navy); color: var(--cream); border-color: var(--navy); }
-.btn-navy:hover { background: var(--navy-700); border-color: var(--navy-700); color: var(--white); }
+/* Secondary Button (.secondary_abut in the brand guide) — same fill as
+   Primary, no hover color shift per spec; the shared .btn:hover lift still
+   gives tactile feedback. */
+.btn-navy { background: var(--maroon); color: var(--white); border-color: var(--maroon); }
+.btn-navy:hover { background: var(--maroon); border-color: var(--maroon); color: var(--white); box-shadow: var(--shadow); }
 
-.btn-outline { background: transparent; border-color: var(--navy); color: var(--navy); }
-.btn-outline:hover { background: var(--navy); color: var(--white); }
+.btn-outline { background: transparent; border-color: var(--navy-950); color: var(--navy-950); }
+.btn-outline:hover { background: var(--navy-950); color: var(--white); }
 
 .btn-outline-light { background: transparent; border-color: rgba(255,255,255,0.55); color: var(--white); }
-.btn-outline-light:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
+.btn-outline-light:hover { background: var(--white); color: var(--navy-950); border-color: var(--white); }
 
-.btn-small { padding: 10px 20px; font-size: 0.74rem; }
+.btn-small { padding: 10px 20px; font-size: 11px; }
 
 /* ==========================================================================
    Hero + page header
@@ -288,16 +331,16 @@ html.js-reveal .reveal-delay-3.is-visible { transition-delay: 0.24s; }
   letter-spacing: 0.22em;
   font-size: 0.76rem;
   font-weight: 500;
-  color: var(--gold-pale);
+  color: var(--cream);
   margin-bottom: 22px;
 }
-.hero-eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--gold); display: inline-block; }
+.hero-eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--cream); display: inline-block; }
 .hero h1 { color: var(--white); margin-bottom: 0.4em; }
 .hero p.lead {
   max-width: 560px;
   font-size: 1.2rem;
   color: rgba(255,255,255,0.85);
-  font-family: "Jost", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .hero-actions { display: flex; gap: 16px; margin-top: 34px; flex-wrap: wrap; }
 .photo-credit-note {
@@ -330,7 +373,7 @@ html.js-reveal .reveal-delay-3.is-visible { transition-delay: 0.24s; }
   gap: 8px;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.28);
-  color: var(--gold-pale);
+  color: var(--cream);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -361,15 +404,15 @@ section { padding: 108px 0; }
   letter-spacing: 0.16em;
   font-size: 0.76rem;
   font-weight: 600;
-  color: var(--gold-deep);
+  color: var(--maroon-deep);
   margin-bottom: 14px;
 }
-.section-navy .eyebrow { color: var(--gold-pale); }
+.section-navy .eyebrow { color: var(--cream); }
 
 .rule {
   width: 60px;
   height: 2px;
-  background: var(--gold);
+  background: var(--maroon);
   margin: 20px 0 28px;
   border: none;
 }
@@ -390,7 +433,7 @@ section { padding: 108px 0; }
   font-weight: 600;
   line-height: 1;
 }
-.section-navy .stat .num { color: var(--gold-pale); }
+.section-navy .stat .num { color: var(--cream); }
 .stat .label {
   margin-top: 10px;
   font-size: 0.86rem;
@@ -401,18 +444,18 @@ section { padding: 108px 0; }
 
 .placeholder-figure {
   display: inline-block;
-  font-family: "Jost", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold-deep);
-  border: 1px dashed var(--gold);
+  color: var(--maroon-deep);
+  border: 1px dashed var(--maroon);
   border-radius: 999px;
   padding: 3px 12px;
   margin-top: 8px;
 }
-.section-navy .placeholder-figure { color: var(--gold-pale); border-color: rgba(231, 218, 191, 0.55); }
+.section-navy .placeholder-figure { color: var(--cream); border-color: rgba(237, 227, 211, 0.55); }
 
 /* Card grid */
 .grid { display: grid; gap: 32px; }
@@ -427,7 +470,7 @@ section { padding: 108px 0; }
   padding: 36px 32px;
   transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
-.card:hover { box-shadow: var(--shadow); transform: translateY(-3px); border-color: var(--gold-pale); }
+.card:hover { box-shadow: var(--shadow); transform: translateY(-3px); border-color: var(--cream); }
 .card .icon {
   width: 50px; height: 50px;
   border-radius: 50%;
@@ -484,7 +527,7 @@ section { padding: 108px 0; }
 .value-list .num-mark {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.6rem;
-  color: var(--gold-deep);
+  color: var(--maroon-deep);
   font-weight: 600;
   flex-shrink: 0;
   width: 40px;
@@ -512,7 +555,7 @@ section { padding: 108px 0; }
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--gold-deep);
+  color: var(--maroon-deep);
 }
 .event-date .day {
   font-family: "Cormorant Garamond", serif;
@@ -551,14 +594,14 @@ section { padding: 108px 0; }
 .recipient-card .grant-amount {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.5rem;
-  color: var(--gold-deep);
+  color: var(--maroon-deep);
   font-weight: 600;
 }
 
 .placeholder-banner {
   background: var(--ivory);
   border: 1px solid var(--stone-dark);
-  border-left: 4px solid var(--gold);
+  border-left: 4px solid var(--maroon);
   border-radius: var(--radius-sm);
   padding: 18px 22px;
   font-size: 0.92rem;
@@ -645,9 +688,9 @@ input, textarea, select {
   color: var(--charcoal);
 }
 input:focus, textarea:focus, select:focus {
-  outline: 2px solid var(--gold-deep);
+  outline: 2px solid var(--maroon-deep);
   outline-offset: 1px;
-  border-color: var(--gold-deep);
+  border-color: var(--maroon-deep);
 }
 textarea { resize: vertical; min-height: 140px; }
 .form-note { font-size: 0.84rem; color: var(--text-muted); }
@@ -667,11 +710,11 @@ textarea { resize: vertical; min-height: 140px; }
   border-bottom: 1px solid rgba(255,255,255,0.14);
 }
 .footer-brand .logo-text, .footer-brand .logo-text .tagline { color: var(--white); }
-.footer-brand .logo-text .tagline { color: var(--gold-pale); }
+.footer-brand .logo-text .tagline { color: var(--cream); }
 .footer-brand p { color: rgba(255,255,255,0.62); font-size: 0.92rem; max-width: 320px; margin-top: 16px; }
 .footer-grid h4 {
   color: var(--white);
-  font-family: "Jost", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -681,7 +724,7 @@ textarea { resize: vertical; min-height: 140px; }
 .footer-grid ul { list-style: none; padding: 0; margin: 0; }
 .footer-grid li { margin-bottom: 11px; }
 .footer-grid a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.92rem; }
-.footer-grid a:hover { color: var(--gold-pale); }
+.footer-grid a:hover { color: var(--cream); }
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -698,7 +741,7 @@ textarea { resize: vertical; min-height: 140px; }
   display: flex; align-items: center; justify-content: center;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
-.social-links a:hover { border-color: var(--gold); background: rgba(182,144,79,0.15); }
+.social-links a:hover { border-color: var(--cream); background: rgba(237,227,211,0.15); }
 .social-links svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.85); }
 
 /* Utility */

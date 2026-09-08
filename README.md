@@ -17,9 +17,12 @@ County, Florida.
 - `partials/header.html`, `partials/footer.html` — shared nav/footer, injected
   at runtime by `assets/js/main.js` so they're defined once and reused on
   every page
-- `assets/css/style.css` — design system: navy/gold/neutral palette,
-  Cormorant Garamond (display) + Jost (body), scroll-reveal animation
-  utilities, responsive breakpoints, accessible focus states
+- `assets/css/style.css` — design system matching the organization's sitewide
+  brand guide exactly: navy `#102F3E`/`#17394B`, maroon `#7B3F3F`/`#692A2A`,
+  taupe `#8B8178`, cream `#EDE3D3`, off-white `#F5F5F5`; Cormorant Garamond
+  for H1/H2, Open Sans for H3–H6/body/links/buttons at the guide's specified
+  sizes and weights; scroll-reveal animation utilities, responsive
+  breakpoints, accessible focus states
 - `assets/js/main.js` — partial includes, nav toggle, active-nav-link
   highlighting, scroll-reveal (IntersectionObserver, respects
   `prefers-reduced-motion`), footer year, demo form handling
@@ -75,8 +78,8 @@ verified is a clearly marked placeholder:
 
 **Photography:** this build has no photos. There's no photo library or image
 generation available in the environment this was built in, so every
-"photography" slot (`.visual-panel` / hero backgrounds) uses a subtle navy/gold
-line-art motif instead, with a visible caption (e.g. "Photography placeholder
+"photography" slot (`.visual-panel` / hero backgrounds) uses a subtle
+line-art motif in the brand colors instead, with a visible caption (e.g. "Photography placeholder
 — junior golf clinic") marking what real image belongs there. Before launch,
 replace these panels with licensed or original photography — this is the
 single biggest thing standing between this build and the "lots of high-quality
